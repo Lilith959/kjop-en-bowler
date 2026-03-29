@@ -151,9 +151,14 @@
       <a href="ads.html">Annonser</a>
       <a href="shop.html">Butikk</a>
       <a href="about.html">Om oss</a>
+      <label class="dark-toggle" title="Nattmodus">
+        <span class="dark-toggle-label">Nattmodus</span>
+        <span class="dark-toggle-switch">
+          <input type="checkbox" id="darkToggle" />
+          <span class="dark-toggle-track"></span>
+        </span>
+      </label>
     </nav>
-
-    <h1 class="page-title">Påskekrim 2026</h1>
     <article class="story-article paper-card">
       <p>Det er påske igjen og familien er i år samlet i en leilighet i byen som Svein-Harald og Wivi leier. Turen til Dønna tok de selv på fredagen. Og de tenkte dessuten at flere i familien egentlig hadde godt av å gå de 100 trappene opp til leiligheten.</p>
 
@@ -436,6 +441,9 @@
       const triggerSlot = buildKrimPlussTriggerAd();
       wireStoryPopupTrigger(triggerSlot);
     });
+  </script>
+  <script>
+    (function(){var t=document.getElementById('darkToggle');if(!t)return;if(localStorage.getItem('darkMode')==='true'){document.body.classList.add('dark-mode');t.checked=true;}t.addEventListener('change',function(){document.body.classList.toggle('dark-mode',this.checked);localStorage.setItem('darkMode',String(this.checked));});}());
   </script>
 </body>
 </html>

@@ -90,6 +90,7 @@
       <a href="ads.html">Annonser</a>
       <a href="shop.html">Butikk</a>
       <a href="about.html">Om oss</a>
+      <label class="dark-toggle" title="Nattmodus"><span class="dark-toggle-label">Nattmodus</span><span class="dark-toggle-switch"><input type="checkbox" id="darkToggle" /><span class="dark-toggle-track"></span></span></label>
     </nav>
 
     <h1 class="page-title">PREMIUM MEDLEMSKAP</h1>
@@ -159,5 +160,8 @@
       </form>
     </section>
   </main>
+  <script>
+    (function(){var t=document.getElementById('darkToggle');if(!t)return;if(localStorage.getItem('darkMode')==='true'){document.body.classList.add('dark-mode');t.checked=true;}t.addEventListener('change',function(){document.body.classList.toggle('dark-mode',this.checked);localStorage.setItem('darkMode',String(this.checked));});}());
+  </script>
 </body>
 </html>

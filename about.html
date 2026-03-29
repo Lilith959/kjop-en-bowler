@@ -14,6 +14,13 @@
       <a href="ads.html">Annonser</a>
       <a href="shop.html">Butikk</a>
       <a href="about.html" class="active">Om oss</a>
+      <label class="dark-toggle" title="Nattmodus">
+        <span class="dark-toggle-label">Nattmodus</span>
+        <span class="dark-toggle-switch">
+          <input type="checkbox" id="darkToggle" />
+          <span class="dark-toggle-track"></span>
+        </span>
+      </label>
     </nav>
 
     <h1 class="page-title">OM OSS</h1>
@@ -24,6 +31,9 @@
       <p>Vi kombinerer absurd reklame med ekte fortellerglede, og hver annonse får sin egen side så den kan deles direkte i sosiale medier.</p>
     </section>
   </main>
+  <script>
+    (function(){var t=document.getElementById('darkToggle');if(!t)return;if(localStorage.getItem('darkMode')==='true'){document.body.classList.add('dark-mode');t.checked=true;}t.addEventListener('change',function(){document.body.classList.toggle('dark-mode',this.checked);localStorage.setItem('darkMode',String(this.checked));});}());
+  </script>
 </body>
 </html>
 
