@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Premium Medlemskap | Kjøp En Bowler</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .signup-wrap {
+      max-width: 760px;
+      margin: 16px auto 30px;
+      padding: 18px;
+      background: rgba(255, 250, 235, 0.85);
+      border: 1px solid rgba(20, 20, 20, 0.3);
+    }
+
+    .signup-form {
+      display: grid;
+      gap: 12px;
+    }
+
+    .signup-form label {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1f1d1a;
+    }
+
+    .signup-form input,
+    .signup-form select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #23201c;
+      background: #fffdf8;
+      color: #1f1d1a;
+      font-size: 16px;
+      font-family: inherit;
+    }
+
+    .signup-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+
+    .signup-actions button,
+    .signup-actions a {
+      display: inline-block;
+      text-decoration: none;
+      padding: 11px 16px;
+      border: 2px solid #1b1a18;
+      font-weight: 700;
+      cursor: pointer;
+      background: #f3e5bf;
+      color: #121212;
+    }
+
+    .signup-actions .primary {
+      background: #a82119;
+      border-color: #6d130f;
+      color: #fff3d9;
+    }
+  </style>
+</head>
+<body>
+  <main class="poster">
+    <nav class="site-nav">
+      <a href="https://lilith959.github.io/kjop-en-bowler/index.html" class="logo-home"><img src="Img/Logo.png" alt="Kjøp En Bowler - Hjem"></a>
+      <a href="https://lilith959.github.io/kjop-en-bowler/index.html">Historier</a>
+      <a href="ads.html">Annonser</a>
+      <a href="shop.html">Butikk</a>
+      <a href="about.html">Om oss</a>
+    </nav>
+
+    <h1 class="page-title">PREMIUM MEDLEMSKAP</h1>
+    <p class="page-intro">Fyll inn informasjonen under for å fortsette premium-flyten.</p>
+
+    <section class="signup-wrap">
+      <form class="signup-form" action="#" method="post">
+        <label for="fullName">Fullt navn</label>
+        <input id="fullName" name="fullName" type="text" placeholder="Fornavn Etternavn" required />
+
+        <label for="email">E-post</label>
+        <input id="email" name="email" type="email" placeholder="navn@epost.no" required />
+
+        <label for="phone">Telefonnummer</label>
+        <input id="phone" name="phone" type="tel" placeholder="+47 000 00 000" />
+
+        <label for="plan">Ønsket medlemskap</label>
+        <select id="plan" name="plan">
+          <option value="plus">Påskekrim Plus</option>
+          <option value="premium">Påskepremium</option>
+        </select>
+
+        <label for="notes">Kommentar</label>
+        <input id="notes" name="notes" type="text" placeholder="Valgfri info" />
+
+        <div class="signup-actions">
+          <button type="submit" class="primary">Send inn</button>
+          <a href="story-2026.html">Tilbake til historien</a>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

@@ -6,6 +6,10 @@
   <title>Påskekrim 2026 | Kjøp En Bowler</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+    body.story-locked {
+      overflow: hidden;
+    }
+
     .ad-placeholder {
       display: flex;
       justify-content: center;
@@ -22,6 +26,84 @@
       height: auto;
       max-width: 100%;
       border: 1px solid rgba(20, 20, 20, 0.35);
+    }
+
+    .ad-popup-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.72);
+      padding: 16px;
+    }
+
+    .ad-popup-overlay.active {
+      display: flex;
+    }
+
+    .ad-popup-card {
+      width: min(920px, 100%);
+      max-height: 92vh;
+      overflow: auto;
+      background: #15120e;
+      border: 2px solid rgba(245, 225, 170, 0.75);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+      border-radius: 6px;
+      padding: 14px;
+    }
+
+    .ad-popup-image-wrap {
+      position: relative;
+      width: 100%;
+      line-height: 0;
+    }
+
+    .ad-popup-image-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .ad-hotspot-btn {
+      position: absolute;
+      left: 50%;
+      bottom: 17%;
+      transform: translateX(-50%);
+      min-width: 200px;
+      padding: 10px 14px;
+      font-size: 22px;
+      font-weight: 700;
+      color: #f8f4e8;
+      background: linear-gradient(180deg, #b8511b, #8d2f0f);
+      border: 2px solid rgba(255, 205, 120, 0.95);
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .ad-popup-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .ad-popup-actions button {
+      border: 2px solid #1f1f1f;
+      background: #f4e5be;
+      color: #111;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 12px 16px;
+      cursor: pointer;
+    }
+
+    .ad-popup-actions button.ad-primary {
+      background: #af2018;
+      color: #fff3d8;
+      border-color: #6f140f;
     }
   </style>
 </head>
@@ -41,7 +123,7 @@
 
       <p>Vel inne har alle funnet seg en plass å sitte. Praten går jevnt inne i den lille stua, imens de kjenner at magen rumler når de kjenner lukten av lammesteik i ovnen. Casper-Emiil jobber hardt midt på gulvet for å få noe etterlengtet oppmerksomhet, mens han springer til og fra vinduet hvert 2 minutt for å se etter John-Henrik som ikke kommer på påskemiddag.</p>
 
-      <div class="ad-placeholder" data-ad="random"></div>
+      <div class="ad-placeholder" data-ad="krim-plus-trigger"></div>
 
       <p>Stillheten senker seg rundt middagsbordet når maten inntas. Svein og Wivi spør ivrig alle og enhver om de likte maten og syntes den var god.</p>
 
@@ -148,6 +230,8 @@
     </div>
   </main>
 
+  <div id="storyAdPopup" class="ad-popup-overlay" aria-hidden="true"></div>
+
   <script src="story-format.js"></script>
   <script>
     const availableAds = [
@@ -189,7 +273,118 @@
       });
     }
 
-    document.addEventListener('DOMContentLoaded', populateAds);
+    function buildKrimPlussTriggerAd() {
+      const triggerSlot = document.querySelector('.ad-placeholder[data-ad="krim-plus-trigger"]');
+      if (!triggerSlot) {
+        return null;
+      }
+
+      const img = document.createElement('img');
+      img.src = 'Img/Krim Pluss.png';
+      img.alt = 'Krim Pluss annonse';
+      triggerSlot.appendChild(img);
+      return triggerSlot;
+    }
+
+    function setPopupContent(html) {
+      const popup = document.getElementById('storyAdPopup');
+      popup.innerHTML = `<div class="ad-popup-card">${html}</div>`;
+    }
+
+    function openPopup() {
+      const popup = document.getElementById('storyAdPopup');
+      popup.classList.add('active');
+      popup.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('story-locked');
+    }
+
+    function closePopup() {
+      const popup = document.getElementById('storyAdPopup');
+      popup.classList.remove('active');
+      popup.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('story-locked');
+    }
+
+    function showStage3(triggerSlot) {
+      setPopupContent(`
+        <div class="ad-popup-image-wrap">
+          <img src="Img/Veksle ape.png" alt="Veksle ape annonse" />
+        </div>
+        <div class="ad-popup-actions">
+          <button id="popupOkBtn" class="ad-primary">OK</button>
+        </div>
+      `);
+
+      document.getElementById('popupOkBtn').addEventListener('click', () => {
+        closePopup();
+        triggerSlot.dataset.popupDone = 'true';
+        triggerSlot.nextElementSibling?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+
+    function showStage2(triggerSlot) {
+      setPopupContent(`
+        <div class="ad-popup-image-wrap">
+          <img src="Img/Påskepremium.png" alt="Påskepremium annonse" />
+        </div>
+        <div class="ad-popup-actions">
+          <button id="premiumSignupBtn" class="ad-primary">Få Premium Medlemskap Gratis</button>
+          <button id="continuePlusBtn">Fortsett Med Plus</button>
+        </div>
+      `);
+
+      document.getElementById('premiumSignupBtn').addEventListener('click', () => {
+        window.location.href = 'premium-medlemskap.html';
+      });
+
+      document.getElementById('continuePlusBtn').addEventListener('click', () => {
+        showStage3(triggerSlot);
+      });
+    }
+
+    function showStage1(triggerSlot) {
+      setPopupContent(`
+        <div class="ad-popup-image-wrap">
+          <img src="Img/Krim Pluss.png" alt="Krim Pluss annonse" />
+          <button id="upgradeNowBtn" class="ad-hotspot-btn">Oppgrader Nå!</button>
+        </div>
+      `);
+
+      openPopup();
+
+      document.getElementById('upgradeNowBtn').addEventListener('click', () => {
+        showStage2(triggerSlot);
+      });
+    }
+
+    function wireStoryPopupTrigger(triggerSlot) {
+      if (!triggerSlot) {
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          if (triggerSlot.dataset.popupDone === 'true') {
+            observer.disconnect();
+            return;
+          }
+
+          showStage1(triggerSlot);
+        });
+      }, { threshold: 0.55 });
+
+      observer.observe(triggerSlot);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      populateAds();
+      const triggerSlot = buildKrimPlussTriggerAd();
+      wireStoryPopupTrigger(triggerSlot);
+    });
   </script>
 </body>
 </html>
