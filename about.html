@@ -5,6 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Om oss | Kj&oslash;p En Bowler</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .about-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .about-copy {
+      display: grid;
+      gap: 14px;
+    }
+
+    .about-copy p {
+      margin: 0;
+      line-height: 1.66;
+      font-size: 18px;
+    }
+
+    .about-logo-panel {
+      position: sticky;
+      top: 18px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .about-logo-wrap {
+      width: min(100%, 420px);
+      margin: 0 auto;
+      background: rgba(255, 248, 232, 0.85);
+      border: 2px solid rgba(20, 20, 20, 0.24);
+      padding: 20px;
+    }
+
+    .about-logo-wrap img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .about-logo-wrap .about-logo-dark {
+      display: none;
+    }
+
+    body.dark-mode .about-logo-wrap {
+      background: rgba(30, 27, 22, 0.85);
+      border-color: rgba(232, 223, 200, 0.25);
+    }
+
+    body.dark-mode .about-logo-wrap .about-logo-light {
+      display: none;
+    }
+
+    body.dark-mode .about-logo-wrap .about-logo-dark {
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .about-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .about-logo-panel {
+        position: static;
+      }
+
+      .about-logo-wrap {
+        max-width: 360px;
+      }
+    }
+  </style>
 </head>
 <body>
   <main class="poster">
@@ -24,11 +95,32 @@
     </nav>
 
     <h1 class="page-title">OM OSS</h1>
-    <p class="page-intro">Kj&oslash;p En Bowler lager humoristiske krim-univers med annonser, historier og detektivmerch.</p>
 
-    <section class="paper-card">
-      <h3>Konsept</h3>
-      <p>Vi kombinerer absurd reklame med ekte fortellerglede, og hver annonse f&aring;r sin egen side s&aring; den kan deles direkte i sosiale medier.</p>
+    <section class="about-layout">
+      <article class="paper-card about-copy">
+        <p>Kj&oslash;p-en-Bowler.com er en mindre virksomhet med fokus p&aring; etterforskning, tilh&oslash;rende utstyr og relaterte produkter.</p>
+
+        <p>Kj&oslash;p-en-Bowler lager humoristiske krimunivers med annonser, historier og detektivmerch.</p>
+
+        <p>Selskapet fungerer som hovedsponsor av Detektiv Downs &amp; Co Detektivbyr&aring; i Mosj&oslash;en, og st&aring;r bak utvikling av b&aring;de utstyr og materiale knyttet til arbeidet som utf&oslash;res der.</p>
+
+        <p>Bowler-Bjarne st&aring;r for det daglige arbeidet, inkludert observasjon, vurdering og innsamling av historier. Gjennom &aring;ret samles det inn hendelser, detaljer og sammenhenger som danner grunnlaget for videre arbeid.</p>
+
+        <p>Historiene er basert p&aring; ekte mennesker og steder, og har et personlig preg.</p>
+
+        <p>Parallelt produseres det litter&aelig;re prosjekter i flere formater. Kj&oslash;p-en-Bowler.com er sponsor av b&aring;de sm&aring; og store produksjoner, inkludert p&aring;skekrim, julekrim, nytt&aring;rskrim, halloweenkrim og true crime.</p>
+
+        <p>Vi kombinerer absurd reklame med ekte fortellerglede. Hver annonse f&aring;r sin egen side, slik at den kan deles direkte i sosiale medier.</p>
+
+        <p>Arbeidet utf&oslash;res fortl&oslash;pende, og det tas h&oslash;yde for at det som samles inn underveis kan p&aring;virke retningen videre.</p>
+      </article>
+
+      <aside class="paper-card about-logo-panel" aria-label="Kj&oslash;p En Bowler logo">
+        <div class="about-logo-wrap">
+          <img src="Img/Logo.png" alt="Kj&oslash;p En Bowler logo" class="about-logo-light" />
+          <img src="Img/Logo Nightmode.png" alt="Kj&oslash;p En Bowler logo" class="about-logo-dark" />
+        </div>
+      </aside>
     </section>
   </main>
   <script>
