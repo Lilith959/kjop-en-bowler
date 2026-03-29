@@ -405,16 +405,19 @@
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-          if (!entry.isIntersecting) {
-            return;
-          }
-
           if (triggerSlot.dataset.popupDone === 'true') {
             observer.disconnect();
             return;
           }
 
-          showStage1(triggerSlot);
+          if (entry.isIntersecting) {
+            triggerSlot.dataset.seen = 'true';
+            return;
+          }
+
+          if (triggerSlot.dataset.seen === 'true') {
+            showStage1(triggerSlot);
+          }
         });
       }, { threshold: 0 });
 
