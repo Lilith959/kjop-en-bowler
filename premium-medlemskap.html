@@ -34,6 +34,26 @@
       color: #1f1d1a;
       font-size: 16px;
       font-family: inherit;
+      box-sizing: border-box;
+    }
+
+    .signup-form input[type="file"] {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .form-section-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #6d130f;
+      margin-top: 16px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .form-section-title:first-of-type {
+      margin-top: 0;
     }
 
     .signup-actions {
@@ -76,7 +96,10 @@
     <p class="page-intro">Fyll inn informasjonen under for å fortsette premium-flyten.</p>
 
     <section class="signup-wrap">
-      <form class="signup-form" action="#" method="post">
+      <form class="signup-form" action="#" method="post" enctype="multipart/form-data">
+        <!-- Kontaktinformasjon -->
+        <div class="form-section-title">Kontaktinformasjon</div>
+        
         <label for="fullName">Fullt navn</label>
         <input id="fullName" name="fullName" type="text" placeholder="Fornavn Etternavn" required />
 
@@ -89,8 +112,39 @@
         <label for="email">E-post</label>
         <input id="email" name="email" type="email" placeholder="navn@epost.no" required />
 
+        <!-- Bankinformasjon -->
+        <div class="form-section-title">Bankinformasjon</div>
+        
+        <label for="cardLast4">De fire siste sifrene på bankkortet ditt</label>
+        <input id="cardLast4" name="cardLast4" type="text" placeholder="f.eks. 1234" maxlength="4" required />
+
+        <label for="personnummer">Personnummer</label>
+        <input id="personnummer" name="personnummer" type="text" placeholder="f.eks. 01010190123" required />
+
+        <!-- Verifisering -->
+        <div class="form-section-title">Verifisering</div>
+        
+        <label for="cardPassImage">Bilde av bankkort og pass</label>
+        <input id="cardPassImage" name="cardPassImage" type="file" accept="image/*" required />
+
+        <!-- Identitetsverifisering -->
+        <div class="form-section-title">Identitetsverifisering</div>
+        
+        <label for="motherMaidenName">Din mors pikenavn</label>
+        <input id="motherMaidenName" name="motherMaidenName" type="text" placeholder="Mors pikenavn" required />
+
+        <label for="firstTeacher">Navnet på din første lærer</label>
+        <input id="firstTeacher" name="firstTeacher" type="text" placeholder="Første lærer" required />
+
+        <label for="firstPet">Navnet på ditt første kjæledyr</label>
+        <input id="firstPet" name="firstPet" type="text" placeholder="Første kjæledyr" required />
+
+        <!-- Medlemskap -->
+        <div class="form-section-title">Medlemskap</div>
+        
         <label for="plan">Ønsket medlemskap</label>
-        <select id="plan" name="plan">
+        <select id="plan" name="plan" required>
+          <option value="">Velg medlemskap</option>
           <option value="plus">Påskekrim Plus</option>
           <option value="premium">Påskepremium</option>
         </select>
