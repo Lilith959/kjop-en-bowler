@@ -38,18 +38,8 @@
       <a class="back-link" href="ads.html">Tilbake til annonser</a>
     </div>
   </main>
-  <div id="orderPopup" class="order-popup-overlay" aria-hidden="true">
-    <div class="order-popup-card">
-      <div class="order-popup-image-wrap">
-        <img src="Img/Veksle ape.png" alt="Veksle ape annonse" />
-      </div>
-      <div class="order-popup-actions">
-        <button type="button" id="orderPopupOk">OK</button>
-      </div>
-    </div>
-  </div>
   <script>
-    (function(){var t=document.getElementById('darkToggle');if(t){if(localStorage.getItem('darkMode')==='true'){document.body.classList.add('dark-mode');t.checked=true;}t.addEventListener('change',function(){document.body.classList.toggle('dark-mode',this.checked);localStorage.setItem('darkMode',String(this.checked));});}var c=document.querySelector('.cta');var p=document.getElementById('orderPopup');var o=document.getElementById('orderPopupOk');if(c&&p&&o){c.addEventListener('click',function(e){e.preventDefault();p.classList.add('active');p.setAttribute('aria-hidden','false');});o.addEventListener('click',function(){p.classList.remove('active');p.setAttribute('aria-hidden','true');if(document.referrer&&document.referrer!==location.href&&history.length>1){history.back();}else{window.location.href='ads.html';}});p.addEventListener('click',function(e){if(e.target===p){p.classList.remove('active');p.setAttribute('aria-hidden','true');}});}}());
+    (function(){var t=document.getElementById('darkToggle');if(t){if(localStorage.getItem('darkMode')==='true'){document.body.classList.add('dark-mode');t.checked=true;}t.addEventListener('change',function(){document.body.classList.toggle('dark-mode',this.checked);localStorage.setItem('darkMode',String(this.checked));});}}());
   </script>
 </body>
 </html>

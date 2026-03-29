@@ -5,6 +5,114 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Butikk | Kj&oslash;p En Bowler</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .shop-hero {
+      margin-bottom: 24px;
+    }
+
+    .shop-hero .page-intro {
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .merch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+    }
+
+    .merch-card {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .merch-media {
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border: 2px solid rgba(27, 26, 24, 0.16);
+      background: rgba(255, 248, 232, 0.9);
+    }
+
+    .merch-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .merch-copy {
+      display: grid;
+      gap: 10px;
+    }
+
+    .merch-copy h3 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .merch-copy p {
+      margin: 0;
+    }
+
+    .merch-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    .merch-price {
+      font-size: 24px;
+      font-weight: 700;
+      color: #6d130f;
+    }
+
+    .merch-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 128px;
+      padding: 12px 18px;
+      border: 2px solid #6d130f;
+      background: #a82119;
+      color: #fff3d9;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .merch-button:hover {
+      background: #861611;
+    }
+
+    .merch-badge {
+      display: inline-block;
+      padding: 5px 10px;
+      border: 1px solid rgba(27, 26, 24, 0.2);
+      background: rgba(243, 229, 191, 0.9);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .order-popup-actions {
+      text-align: center;
+    }
+
+    .order-popup-actions button {
+      padding: 11px 18px;
+      border: 2px solid #1b1a18;
+      background: #f3e5bf;
+      color: #121212;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <main class="poster">
@@ -23,29 +131,175 @@
       </label>
     </nav>
 
-    <h1 class="page-title">BUTIKK</h1>
-    <p class="page-intro">Velg en annonse under og bruk den som kampanjeside for produktet.</p>
+    <section class="shop-hero">
+      <h1 class="page-title">BOWLER-BJARNE MERCH</h1>
+      <p class="page-intro">Butikken er fylt med nytt Bowler-Bjarne-utstyr for kaffe, reiser, notater og etterforskning. Hver kj&oslash;p n&aring;-knapp bruker samme bestillingsflyt som annonsene.</p>
+    </section>
 
-    <section class="card-grid">
-      <article class="paper-card">
-        <h3>DIY-Sett</h3>
-        <p>Detektivpakken med notatblokk, blyant og selvtilitt.</p>
-        <p class="price-tag">Fra 299,-</p>
+    <section class="merch-grid">
+      <article class="paper-card merch-card">
+        <div class="merch-media">
+          <img src="Img/Bowler Bjarne/Bowler-Bjarne Kopp.png" alt="Bowler-Bjarne kopp" />
+        </div>
+        <div class="merch-copy">
+          <span class="merch-badge">Kj&oslash;kken</span>
+          <h3>Bowler-Bjarne Kopp</h3>
+          <p>Hvit keramisk kopp med bilde av Bowler-Bjarne. Rommer kaffe, te og andre n&oslash;dvendige v&aelig;sker under etterforskning.</p>
+          <div class="merch-meta">
+            <span class="merch-price">179,-</span>
+            <a href="Img/Veksle ape.png" class="merch-button cta">Kj&oslash;p n&aring;</a>
+          </div>
+        </div>
       </article>
-      <article class="paper-card">
-        <h3>Premium Historier</h3>
-        <p>Abonnement med nye mysterier og bonusinnhold hver m&aring;ned.</p>
-        <p class="price-tag">Fra 99,- / mnd</p>
+
+      <article class="paper-card merch-card">
+        <div class="merch-media">
+          <img src="Img/Bowler Bjarne/Bowler-Bjarne T-skjorte.png" alt="Bowler-Bjarne T-skjorte" />
+        </div>
+        <div class="merch-copy">
+          <span class="merch-badge">Kl&aelig;r</span>
+          <h3>Bowler-Bjarne T-skjorte</h3>
+          <p>Klassisk T-skjorte med bilde av Bowler-Bjarne. Myk bomull, normal passform og trykk laget for jevn bruk.</p>
+          <div class="merch-meta">
+            <span class="merch-price">349,-</span>
+            <a href="Img/Veksle ape.png" class="merch-button cta">Kj&oslash;p n&aring;</a>
+          </div>
+        </div>
       </article>
-      <article class="paper-card">
-        <h3>Merch</h3>
-        <p>Bowler, notatblokker og detektivrekvisitter i begrenset opplag.</p>
-        <p class="price-tag">Begrenset lager</p>
+
+      <article class="paper-card merch-card">
+        <div class="merch-media">
+          <img src="Img/Bowler Bjarne/Bowler-Bjarne Notatblokk.png" alt="Bowler-Bjarne notatblokk" />
+        </div>
+        <div class="merch-copy">
+          <span class="merch-badge">Kontor</span>
+          <h3>Bowler-Bjarne Notatblokk</h3>
+          <p>Notatblokk med bilde av Bowler-Bjarne p&aring; forsiden. Gir plass til ideer, teorier og notater underveis.</p>
+          <div class="merch-meta">
+            <span class="merch-price">129,-</span>
+            <a href="Img/Veksle ape.png" class="merch-button cta">Kj&oslash;p n&aring;</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="paper-card merch-card">
+        <div class="merch-media">
+          <img src="Img/Bowler Bjarne/Bowler-Bjarne Kortstokk.png" alt="Bowler-Bjarne kortstokk" />
+        </div>
+        <div class="merch-copy">
+          <span class="merch-badge">Spill</span>
+          <h3>Bowler-Bjarne Kortstokk</h3>
+          <p>Standard kortstokk med tydelig trykk, god lesbarhet og slitesterk overflate for hyppig bruk.</p>
+          <div class="merch-meta">
+            <span class="merch-price">199,-</span>
+            <a href="Img/Veksle ape.png" class="merch-button cta">Kj&oslash;p n&aring;</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="paper-card merch-card">
+        <div class="merch-media">
+          <img src="Img/Bowler Bjarne/Bowler-Bjarne Hettegenser.png" alt="Bowler-Bjarne hettegenser" />
+        </div>
+        <div class="merch-copy">
+          <span class="merch-badge">Kl&aelig;r</span>
+          <h3>Bowler-Bjarne Hettegenser</h3>
+          <p>Myk innside, solid stoff, normal passform, frontlomme og justerbar hette for lange m&oslash;rke observasjoner.</p>
+          <div class="merch-meta">
+            <span class="merch-price">649,-</span>
+            <a href="Img/Veksle ape.png" class="merch-button cta">Kj&oslash;p n&aring;</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="paper-card merch-card">
+        <div class="merch-media">
+          <img src="Img/Bowler Bjarne/Bowler-Bjarne Sovemaske.png" alt="Bowler-Bjarne sovemaske" />
+        </div>
+        <div class="merch-copy">
+          <span class="merch-badge">Reise</span>
+          <h3>Bowler-Bjarne Sovemaske</h3>
+          <p>Lett og behagelig sovemaske med elastisk stropp. Blokkerer lys effektivt og sitter komfortabelt over tid.</p>
+          <div class="merch-meta">
+            <span class="merch-price">159,-</span>
+            <a href="Img/Veksle ape.png" class="merch-button cta">Kj&oslash;p n&aring;</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="paper-card merch-card">
+        <div class="merch-media">
+          <img src="Img/Bowler Bjarne/Bowler-Bjarne Plushie.png" alt="Bowler-Bjarne plushie" />
+        </div>
+        <div class="merch-copy">
+          <span class="merch-badge">Samleobjekt</span>
+          <h3>Bowler-Bjarne Plushie</h3>
+          <p>Heklet versjon av Bowler-Bjarne i mykt garn med solide s&oslash;mmer og tydelige detaljer som holder formen.</p>
+          <div class="merch-meta">
+            <span class="merch-price">499,-</span>
+            <a href="Img/Veksle ape.png" class="merch-button cta">Kj&oslash;p n&aring;</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="paper-card merch-card">
+        <div class="merch-media">
+          <img src="Img/Bowler Bjarne/Bowler-Bjarne Klistremerker.png" alt="Bowler-Bjarne klistremerker" />
+        </div>
+        <div class="merch-copy">
+          <span class="merch-badge">Tilbeh&oslash;r</span>
+          <h3>Bowler-Bjarne Klistremerker</h3>
+          <p>Sett med Bowler-Bjarne i ulike situasjoner med skarpt trykk, sterke farger og godt feste p&aring; glatte flater.</p>
+          <div class="merch-meta">
+            <span class="merch-price">99,-</span>
+            <a href="Img/Veksle ape.png" class="merch-button cta">Kj&oslash;p n&aring;</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="paper-card merch-card">
+        <div class="merch-media">
+          <img src="Img/Bowler Bjarne/Barnebok – Detektiv Bowler-Bjarne på sporet.png" alt="Detektiv Bowler-Bjarne p&aring; sporet" />
+        </div>
+        <div class="merch-copy">
+          <span class="merch-badge">Bok</span>
+          <h3>Detektiv Bowler-Bjarne p&aring; sporet</h3>
+          <p>Illustrert barnebok der sporene kommer i uventet rekkef&oslash;lge, og leseren selv kan pr&oslash;ve &aring; l&oslash;se saken underveis.</p>
+          <div class="merch-meta">
+            <span class="merch-price">249,-</span>
+            <a href="Img/Veksle ape.png" class="merch-button cta">Kj&oslash;p n&aring;</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="paper-card merch-card">
+        <div class="merch-media">
+          <img src="Img/Bowler Bjarne/Barnebok – Detektiv Bowler-Bjarne og den mystiske hunden.png" alt="Detektiv Bowler-Bjarne og den mystiske hunden" />
+        </div>
+        <div class="merch-copy">
+          <span class="merch-badge">Bok</span>
+          <h3>Detektiv Bowler-Bjarne og den mystiske hunden</h3>
+          <p>Illustrert fortelling om en hund med for mange spor, bygget slik at leseren selv kan gjette l&oslash;sningen f&oslash;r avsl&oslash;ringen.</p>
+          <div class="merch-meta">
+            <span class="merch-price">249,-</span>
+            <a href="Img/Veksle ape.png" class="merch-button cta">Kj&oslash;p n&aring;</a>
+          </div>
+        </div>
       </article>
     </section>
   </main>
+  <div id="orderPopup" class="order-popup-overlay" aria-hidden="true">
+    <div class="order-popup-card">
+      <div class="order-popup-image-wrap">
+        <img src="Img/Veksle ape.png" alt="Veksle ape annonse" />
+      </div>
+      <div class="order-popup-actions">
+        <button type="button" id="orderPopupOk">OK</button>
+      </div>
+    </div>
+  </div>
   <script>
-    (function(){var t=document.getElementById('darkToggle');if(!t)return;if(localStorage.getItem('darkMode')==='true'){document.body.classList.add('dark-mode');t.checked=true;}t.addEventListener('change',function(){document.body.classList.toggle('dark-mode',this.checked);localStorage.setItem('darkMode',String(this.checked));});}());
+    (function(){var t=document.getElementById('darkToggle');if(t){if(localStorage.getItem('darkMode')==='true'){document.body.classList.add('dark-mode');t.checked=true;}t.addEventListener('change',function(){document.body.classList.toggle('dark-mode',this.checked);localStorage.setItem('darkMode',String(this.checked));});}var buttons=document.querySelectorAll('.cta');var popup=document.getElementById('orderPopup');var ok=document.getElementById('orderPopupOk');buttons.forEach(function(button){button.addEventListener('click',function(e){e.preventDefault();popup.classList.add('active');popup.setAttribute('aria-hidden','false');});});if(ok&&popup){ok.addEventListener('click',function(){popup.classList.remove('active');popup.setAttribute('aria-hidden','true');if(document.referrer&&document.referrer!==location.href&&history.length>1){history.back();}else{window.location.href='shop.html';}});popup.addEventListener('click',function(e){if(e.target===popup){popup.classList.remove('active');popup.setAttribute('aria-hidden','true');}});}}());
   </script>
 </body>
 </html>
