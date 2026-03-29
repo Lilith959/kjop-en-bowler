@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free drawing book | Kjøp En Bowler</title>
+  <style>
+    :root {
+      --paper: #f1e4ca;
+      --ink: #1f1d1a;
+      --muted: #4d4538;
+      --accent: #8f2017;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #e8d7b6 0%, var(--paper) 100%);
+    }
+
+    .book-wrap {
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 28px 20px 40px;
+    }
+
+    .book-head {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .book-head h1 {
+      margin: 0;
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .book-head p {
+      margin: 0;
+      line-height: 1.55;
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 780px;
+    }
+
+    .book-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+
+    .book-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border: 2px solid var(--accent);
+      background: var(--accent);
+      color: #fff3d9;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+    }
+
+    .book-btn.secondary {
+      background: transparent;
+      color: var(--ink);
+      border-color: rgba(31, 29, 26, 0.45);
+    }
+
+    .book-grid {
+      display: grid;
+      gap: 24px;
+      margin-top: 12px;
+    }
+
+    .drawing-page {
+      margin: 0;
+      background: #ffffff;
+      border: 2px solid rgba(0, 0, 0, 0.2);
+      padding: 14px;
+    }
+
+    .drawing-page img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .drawing-page figcaption {
+      margin-top: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #3e3932;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .book-head,
+      .book-actions {
+        display: none;
+      }
+
+      .book-wrap {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .book-grid {
+        margin: 0;
+        gap: 0;
+      }
+
+      .drawing-page {
+        border: none;
+        padding: 0;
+        page-break-after: always;
+        break-after: page;
+      }
+
+      .drawing-page:last-child {
+        page-break-after: auto;
+        break-after: auto;
+      }
+
+      .drawing-page figcaption {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="book-wrap">
+    <header class="book-head">
+      <h1>Free drawing book<br/>with Bowler Bjarne</h1>
+      <p>Her finner du gratis tegnesider med Bowler-Bjarne. Scroll ned, se sidene i stor visning og trykk utskrift n&aring;r du vil tegne dem p&aring; papir.</p>
+      <div class="book-actions">
+        <button type="button" class="book-btn" id="printBtn">Skriv ut tegnebok</button>
+        <a href="shop.html" class="book-btn secondary">Tilbake til merch shop</a>
+      </div>
+    </header>
+
+    <section class="book-grid" aria-label="Tegnesider">
+      <figure class="drawing-page">
+        <img src="Img/Tegn og mal/Bjarne f;lger spor.png" alt="Bowler-Bjarne følger spor i hagen" />
+        <figcaption>Side 1</figcaption>
+      </figure>
+
+      <figure class="drawing-page">
+        <img src="Img/Tegn og mal/Bjarne kake spiser.png" alt="Bowler-Bjarne lager teorioversikt med bilder" />
+        <figcaption>Side 2</figcaption>
+      </figure>
+
+      <figure class="drawing-page">
+        <img src="Img/Tegn og mal/bjarne med hund.png" alt="Bowler-Bjarne med hund" />
+        <figcaption>Side 3</figcaption>
+      </figure>
+
+      <figure class="drawing-page">
+        <img src="Img/Tegn og mal/Bjarne med sokk.png" alt="Bowler-Bjarne undersøker en sokk" />
+        <figcaption>Side 4</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var printBtn = document.getElementById('printBtn');
+      if (!printBtn) {
+        return;
+      }
+
+      printBtn.addEventListener('click', function () {
+        window.print();
+      });
+    }());
+  </script>
+</body>
+</html>
