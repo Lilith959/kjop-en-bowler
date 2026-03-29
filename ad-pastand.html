@@ -14,7 +14,7 @@
 <body>
   <main class="poster">
     <nav class="site-nav">
-      <a href="https://lilith959.github.io/kjop-en-bowler/index.html" class="logo-home"><img src="Img/Logo.png" alt="Kjøp En Bowler - Hjem"></a>
+      <a href="https://lilith959.github.io/kjop-en-bowler/index.html" class="logo-home"><img src="Img/Logo.png" alt="Kj&oslash;p En Bowler - Hjem" class="logo-light"><img src="Img/Logo Nightmode.png" alt="Kj&oslash;p En Bowler - Hjem" class="logo-dark"></a>
       <a href="https://lilith959.github.io/kjop-en-bowler/index.html">Historier</a>
       <a href="ads.html">Annonser</a>
       <a href="shop.html">Butikk</a>
@@ -38,8 +38,18 @@
       <a class="back-link" href="ads.html">Tilbake til annonser</a>
     </div>
   </main>
+  <div id="orderPopup" class="order-popup-overlay" aria-hidden="true">
+    <div class="order-popup-card">
+      <div class="order-popup-image-wrap">
+        <img src="Img/Veksle ape.png" alt="Veksle ape annonse" />
+      </div>
+      <div class="order-popup-actions">
+        <button type="button" id="orderPopupOk">OK</button>
+      </div>
+    </div>
+  </div>
   <script>
-    (function(){var t=document.getElementById('darkToggle');if(!t)return;if(localStorage.getItem('darkMode')==='true'){document.body.classList.add('dark-mode');t.checked=true;}t.addEventListener('change',function(){document.body.classList.toggle('dark-mode',this.checked);localStorage.setItem('darkMode',String(this.checked));});}());
+    (function(){var t=document.getElementById('darkToggle');if(t){if(localStorage.getItem('darkMode')==='true'){document.body.classList.add('dark-mode');t.checked=true;}t.addEventListener('change',function(){document.body.classList.toggle('dark-mode',this.checked);localStorage.setItem('darkMode',String(this.checked));});}var c=document.querySelector('.cta');var p=document.getElementById('orderPopup');var o=document.getElementById('orderPopupOk');if(c&&p&&o){c.addEventListener('click',function(e){e.preventDefault();p.classList.add('active');p.setAttribute('aria-hidden','false');});o.addEventListener('click',function(){p.classList.remove('active');p.setAttribute('aria-hidden','true');if(document.referrer&&document.referrer!==location.href&&history.length>1){history.back();}else{window.location.href='ads.html';}});p.addEventListener('click',function(e){if(e.target===p){p.classList.remove('active');p.setAttribute('aria-hidden','true');}});}}());
   </script>
 </body>
 </html>
