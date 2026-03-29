@@ -281,16 +281,16 @@
   <script src="story-format.js"></script>
   <script>
     const availableAds = [
-      'bowler hatt.png',
-      'Diydowns.png',
-      'Fomo.png',
-      'kjekke men.png',
-      'maincharacter.png',
+      'Bowlerhatt!.png',
+      'Detektiv Downs DIY-Sett.png',
+      'Oppdatert.png',
+      'Main Character Energy.png',
+      'Bowler Tilbud.png',
       'mistanke premium.png',
-      'Pause pust.png',
-      'Påstand.png',
+      'Pause Pro.png',
+      'Påske Påstand.png',
       'Rent a kill.png',
-      'spenning.png'
+      'Spennings Pakken.png'
     ];
 
     function getShuffledAds() {
@@ -326,7 +326,7 @@
       }
 
       const img = document.createElement('img');
-      img.src = 'Img/Krim Pluss.png';
+      img.src = 'Img/Påskekrim Pluss.png';
       img.alt = 'Krim Pluss annonse';
       triggerSlot.appendChild(img);
       return triggerSlot;
@@ -371,7 +371,7 @@
     function showStage2(triggerSlot) {
       setPopupContent(`
         <div class="ad-popup-image-wrap">
-          <img src="Img/Påskepremium.png" alt="Påskepremium annonse" />
+          <img src="Img/Gratis Premium Medlemskap.png" alt="Påskepremium annonse" />
         </div>
         <div class="ad-popup-actions">
           <button id="premiumSignupBtn" class="ad-primary">Få Premium Medlemskap Gratis</button>
@@ -391,7 +391,7 @@
     function showStage1(triggerSlot) {
       setPopupContent(`
         <div class="ad-popup-image-wrap">
-          <img src="Img/Krim Pluss.png" alt="Krim Pluss annonse" />
+          <img src="Img/Påskekrim Pluss.png" alt="Krim Pluss annonse" />
           <button id="upgradeNowBtn" class="ad-hotspot-btn">Oppgrader Nå!</button>
         </div>
       `);
